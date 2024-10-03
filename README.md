@@ -292,7 +292,7 @@ zone "rujapala.it29.com" {
 ![WhatsApp Image 2024-10-03 at 04 30 05](https://github.com/user-attachments/assets/5ef6a33b-9bea-4033-9967-9ab69546fb41)
 
 - lalu di majapahit nyalakan ` service bind9 start` dan ping client
-![Uploading WhatsApp Image 2024-10-03 at 04.31.19.jpeg…]()
+![WhatsApp Image 2024-10-03 at 04 31 19](https://github.com/user-attachments/assets/04baea21-024f-4ccc-b8dd-710f6af76593)
 
 
 
