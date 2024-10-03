@@ -200,8 +200,9 @@ service bind9 restart
 
 #### Output
 
-<img src="img/8.1.png">
-<img src="img/8.2.png">
+<img src="img/cakra_k.png">
+<img src="img/cakra_sam.png">
+<img src="img/cakra_san.png">
 
 
 ### soal 9
@@ -295,8 +296,9 @@ service bind9 restart
 ```
 
 #### Output
-<img src="img/9.1.png">
-<img src="img/9.2.png">
+<img src="img/panah_k.png">
+<img src="img/panah_sam.png">
+<img src="img/panah_san.png">
 
 ### soal 10
 
@@ -324,8 +326,9 @@ service bind9 restart
 ```
 
 #### Output
-<img src="img/10.1.png">
-<img src="img/10.2.png">
+<img src="img/log_k.png">
+<img src="img/log_sam.png">
+<img src="img/log_san.png">
 
 ### soal 11
 
@@ -370,8 +373,7 @@ Masukkan nameserver IP Sriwijaya (10.78.1.3) pada salah satu client dengan `nano
 
 #### Output
 
-<img src="img/11-testing.jpg">
-<img src="img/11-testing2.jpg">
+<img src="img/no11.png">
 
 ### soal 12
 
