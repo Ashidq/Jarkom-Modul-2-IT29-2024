@@ -32,7 +32,7 @@
 
 <a name="topologi"></a>
 ### Topologi
-<img src="img/topologi.jpg">
+<img src="img/topologi.png">
 
 ### Prefix
 | IT29 | 10.78 |
