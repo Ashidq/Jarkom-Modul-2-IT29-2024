@@ -201,7 +201,7 @@ service bind9 restart
 #### Output
 
 <img src="img/cakra_k.png">
-<img src="img/cakra_sam.png">
+<img src="img/cakra_sama.png">
 <img src="img/cakra_san.png">
 
 
@@ -297,7 +297,7 @@ service bind9 restart
 
 #### Output
 <img src="img/panah_k.png">
-<img src="img/panah_sam.png">
+<img src="img/panah_sama.png">
 <img src="img/panah_san.png">
 
 ### soal 10
