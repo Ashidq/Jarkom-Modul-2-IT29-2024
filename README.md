@@ -195,11 +195,63 @@ Markas pusat meminta dibuatnya domain khusus untuk menaruh informasi persenjataa
 
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
 
+#### jalankan script (sriwijaya2.sh) untuk testing ping
+-  ini jalankan sriwijaya2.sh di sriwijaya 
+![WhatsApp Image 2024-10-01 at 21 51 41](https://github.com/user-attachments/assets/cfe5faa1-1910-4867-a329-3bb73d7ebc28)
+
+- ini ping sudarsana di sanjaya(client)
+![WhatsApp Image 2024-10-01 at 21 51 10](https://github.com/user-attachments/assets/b6e44666-8287-426c-a721-2a7db3783389)
+
+- ini ping sudarsana di Samaratungga (client)
+![WhatsApp Image 2024-10-01 at 21 54 34](https://github.com/user-attachments/assets/efff7927-8c99-4e27-9915-2f5fff8089e7)
+
+- ini ping sudarsana di KenArok (client)
+![WhatsApp Image 2024-10-01 at 21 55 41](https://github.com/user-attachments/assets/49eb9378-5d1d-47fc-b850-baf74948aecb)
+
+
+
+#### jalankan script (sriwijaya3.sh) untuk testing ping
+![WhatsApp Image 2024-10-03 at 00 56 41](https://github.com/user-attachments/assets/5e54fe26-386f-4c33-ac93-3a947a865ff6)
+
+- ini ping pasopati di Sanjaya (client)
+![WhatsApp Image 2024-10-03 at 00 57 39](https://github.com/user-attachments/assets/fe12d3af-c2f6-45a4-8896-ce1e301acf55)
+
+- ini ping pasopati di samaratungga
+![WhatsApp Image 2024-10-03 at 00 58 38](https://github.com/user-attachments/assets/a195336f-f58c-492a-a045-b17fe972fdc3)
+
+- ini ping pasopati di KenArok
+![WhatsApp Image 2024-10-03 at 00 59 33](https://github.com/user-attachments/assets/de24d8e6-c5ae-4a11-b1d5-ad3861cd2250)
+
+
+#### jalankan script (sriwijaya4.sh) untuk testing ping
+![WhatsApp Image 2024-10-03 at 01 24 58](https://github.com/user-attachments/assets/4184adda-5766-40c5-b358-1994afb77c3c)
+
+- ini ping rujapala di Sanjaya (client)
+![WhatsApp Image 2024-10-03 at 01 25 46](https://github.com/user-attachments/assets/bca8a6a7-bc48-4686-bcd6-713a2b0ca5e3)
+
+- ini ping rujapala di samaratungga (client)
+![WhatsApp Image 2024-10-03 at 01 27 06](https://github.com/user-attachments/assets/d0422bb2-ae69-441d-a404-3eb093fe432a)
+
+-ini ping rujapala di kenarok (client)
+![WhatsApp Image 2024-10-03 at 01 28 24](https://github.com/user-attachments/assets/de3e4540-57f6-45b8-95dd-41dd867e3652)
 
 
 ### soal 6
 
 Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).
+
+- buat nano sriwijaya5.sh yang isinya reserve dari kotalingga, lalu jalankan scriptnya
+<img width="544" alt="image" src="https://github.com/user-attachments/assets/508b3490-d832-4ef6-8962-efa2d67d3897">
+
+- lalu testing di sanjaya  (client)
+![WhatsApp Image 2024-10-03 at 02 01 49](https://github.com/user-attachments/assets/39fe2422-39fd-47fe-a7bf-db7d55e434c6)
+
+- testing juga di samaratungga (client)
+![WhatsApp Image 2024-10-03 at 02 03 08](https://github.com/user-attachments/assets/74fff72e-d056-411a-987f-8a6f9b63146b)
+
+-testing juga du kenArok (client)
+![WhatsApp Image 2024-10-03 at 02 03 59](https://github.com/user-attachments/assets/411adccc-74bf-47ac-9426-ceadc3d754ee)
+
 
 ### soal 7
 
