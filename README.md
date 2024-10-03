@@ -257,6 +257,46 @@ Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses dom
 
 Akhir-akhir ini seringkali terjadi serangan brainrot ke DNS Server Utama, sebagai tindakan antisipasi kamu diperintahkan untuk membuat DNS Slave di Majapahit untuk semua domain yang sudah dibuat sebelumnya yang mengarah ke Sriwijaya.
 
+- pada sriwijaya
+```
+nano /etc/bind/named.conf.local
+```
+
+```
+notify yes;
+allow-transfer { 10.78.2.2; }; # IP majapahit
+also-notify { 10.78.2.2; }; # IP majapahit
+```
+
+-pada majapahit (slave)
+```
+echo ‘zone "sudarsana.it29.com" {
+	type slave;
+	masters {10.78.1.3;}; # IP sriwijaya
+	file "/etc/bind/jarkom/sudarsana.it29.com";
+};
+zone "pasopati.it29.com" {
+	type slave;
+	masters {10.78.1.3;}; # IP sriwijaya
+	file "/etc/bind/jarkom/pasopati.it29.com";
+};
+zone "rujapala.it29.com" {
+	type slave;
+	masters {10.78.1.3;}; # IP sriwijaya
+	file "/etc/bind/jarkom/rujapala.it29.com";
+};’ > /etc/bind/named.conf.local
+```
+
+- jalakan semua file sriwijaya kecuali yang reserve
+- di sriwijaya `service bind9 stop` untuk ngestop running 
+![WhatsApp Image 2024-10-03 at 04 30 05](https://github.com/user-attachments/assets/5ef6a33b-9bea-4033-9967-9ab69546fb41)
+
+- lalu di majapahit nyalakan ` service bind9 start` dan ping client
+![Uploading WhatsApp Image 2024-10-03 at 04.31.19.jpeg…]()
+
+
+
+
 
 ### soal 8
 
