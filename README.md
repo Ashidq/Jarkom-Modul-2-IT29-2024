@@ -175,21 +175,203 @@ Akhir-akhir ini seringkali terjadi serangan brainrot ke DNS Server Utama, sebaga
 
 Kamu juga diperintahkan untuk membuat subdomain khusus melacak kekuatan tersembunyi di Ohio dengan subdomain cakra.sudarsana.xxxx.com yang mengarah ke Bedahulu.
 
+#### Script
+
+```
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     sudarsana.it29.com. root.sudarsana.it29.com. (
+                        2023101001      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      sudarsana.it29.com.
+@       IN      A       10.78.1.4   ; 
+www     IN      CNAME   sudarsana.it29.com.
+cakra  IN      A        10.78.2.4     ;' > /etc/bind/jarkom/sudarsana.it29
+
+service bind9 restart
+```
+
+#### Output
+
+<img src="img/8.1.png">
+<img src="img/8.2.png">
+
 
 ### soal 9
 
 Karena terjadi serangan DDOS oleh shikanoko nokonoko koshitantan (NUN), sehingga sistem komunikasinya terhalang. Untuk melindungi warga, kita diperlukan untuk membuat sistem peringatan dari siren man oleh Frekuensi Freak dan memasukkannya ke subdomain panah.pasopati.xxxx.com dalam folder panah dan pastikan dapat diakses secara mudah dengan menambahkan alias www.panah.pasopati.xxxx.com dan mendelegasikan subdomain tersebut ke Majapahit dengan alamat IP menuju radar di Kotalingga.
 
+#### Script
+##### sriwijaya
+
+```
+echo ';
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     pasopati.it29.com. root.pasopati.it29.com. (
+                        2023101001      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      pasopati.it29.com.
+www     IN      CNAME   pasopati.it29.com.
+ns1     IN      A       10.78.2.2     ; IP Majapahit
+panah   IN      NS      ns1' > /etc/bind/jarkom/pasopati.it29.com
+
+
+echo "options {
+    directory \"/var/cache/bind\";
+
+    // If there is a firewall between you and nameservers you want
+    // to talk to, you may need to fix the firewall to allow multiple
+    // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+    // If your ISP provided one or more IP addresses for stable
+    // nameservers, you probably want to use them as forwarders.
+    // Uncomment the following block, and insert the addresses replacing
+    // the all-0's placeholder.  
+    // };
+
+    //========================================================================
+    // If BIND logs error messages about the root key being expired,
+    // you will need to update your keys.  See https://www.isc.org/bind-keys
+    //========================================================================
+    //dnssec-validation auto;
+
+    allow-query { any; };
+    auth-nxdomain no;
+    listen-on-v6 { any; };
+};" > /etc/bind/named.conf.options
+
+service bind9 restart
+```
+
+##### Majapahit
+
+```
+echo "
+options {
+        directory \"/var/cache/bind\";
+        allow-query{any;};
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+};
+" > /etc/bind/named.conf.options
+
+echo '
+
+zone "panah.pasopati.it29.com"{
+        type master;
+        file "/etc/bind/panah/panah.pasopati.it29.com";
+};
+'>> /etc/bind/named.conf.local
+
+mkdir /etc/bind/panah
+
+echo "
+\$TTL    604800
+@       IN      SOA     panah.pasopati.it29.com. root.panah.pasopati.it29.com. (
+                        2021100401      ; Serial
+                        604800         ; Refresh
+                        86400         ; Retry
+                        2419200         ; Expire
+                        604800 )       ; Negative Cache TTL
+;
+@               IN      NS      panah.pasopati.it29.com.
+@               IN      A       10.78.2.3       ;ip kalingga
+www             IN      CNAME   panah.pasopati.it29.com.
+" > /etc/bind/panah/panah.pasopati.it29.com
+service bind9 restart
+```
+
+#### Output
+<img src="img/9.1.png">
+<img src="img/9.2.png">
 
 ### soal 10
 
 Markas juga meminta catatan kapan saja meme brain rot akan dijatuhkan, maka buatlah subdomain baru di subdomain panah yaitu log.panah.pasopati.xxxx.com serta aliasnya www.log.panah.pasopati.xxxx.com yang juga mengarah ke Kotalingga.
 
+#### Script
+##### Majapahit
+
+```
+echo "
+\$TTL    604800
+@       IN      SOA     panah.pasopati.it29.com. root.panah.pasopati.it29.com. (
+                        2021100401      ; Serial
+                        604800         ; Refresh
+                        86400         ; Retry
+                        2419200         ; Expire
+                        604800 )       ; Negative Cache TTL
+;
+@               IN      NS      panah.pasopati.it29.com.
+@               IN      A       10.72.2.3       ;
+www             IN      CNAME   panah.pasopati.it29.com.
+log             IN      A       10.72.2.3      ; 
+www.log         IN      CNAME   log.panah.pasopati.it29.com." > /etc/bind/panah/panah.pasopati.it29.com
+service bind9 restart
+```
+
+#### Output
+<img src="img/10.1.png">
+<img src="img/10.2.png">
 
 ### soal 11
 
 Setelah pertempuran mereda, warga IT dapat kembali mengakses jaringan luar dan menikmati meme brainrot terbaru, tetapi hanya warga Majapahit saja yang dapat mengakses jaringan luar secara langsung. Buatlah konfigurasi agar warga IT yang berada diluar Majapahit dapat mengakses jaringan luar melalui DNS Server Majapahit.
 
+#### Script
+##### Majapahit
+
+```
+echo 'options {
+    directory "/var/cache/bind";
+
+    // If there is a firewall between you and nameservers you want
+    // to talk to, you may need to fix the firewall to allow multiple
+    // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+    // If your ISP provided one or more IP addresses for stable
+    // nameservers, you probably want to use them as forwarders.
+    // Uncomment the following block, and insert the addresses replacing
+    // the all-0s placeholder.
+    forwarders {
+        192.168.122.1;
+    };
+
+    //========================================================================
+    // If BIND logs error messages about the root key being expired,
+    // you will need to update your keys.  See https://www.isc.org/bind-keys
+    //========================================================================
+    //dnssec-validation auto;
+
+    allow-query { any; };
+    auth-nxdomain no;
+    listen-on-v6 { any; };
+};' > /etc/bind/named.conf.options
+
+service bind9 restart
+```
+
+### Testing
+
+Masukkan nameserver IP Sriwijaya (10.78.1.3) pada salah satu client dengan `nano /etc/resolv.conf`, seharusnya bisa akses ke jaringan luar. 
+
+#### Output
+
+<img src="img/11-testing.jpg">
+<img src="img/11-testing2.jpg">
 
 ### soal 12
 
