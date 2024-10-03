@@ -9,7 +9,8 @@
 #Laporan Resmi
 
 ### Topologi
-<img src="img/topo.png">
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/a5ac0a6a-4377-4a07-b3ce-1c6f64ba4e2b">
+
 
 ### Prefix
 | IT29 | 10.78 |
