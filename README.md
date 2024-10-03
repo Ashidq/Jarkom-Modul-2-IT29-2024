@@ -16,6 +16,10 @@
 | IT29 | 10.78 |
 |---------|---------|
 
+
+### soal 1
+
+Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave.
 ### Config
 #### Nusantara
 ```
@@ -138,28 +142,59 @@ nameserver 192.168.122.1
 ```
 
 
-### soal 1
-
-Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave.
 
 ### soal 2
 
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.
+- install bind9 lalu nano /etc/bind/named.conf.local untuk mengkonfigurasi zone sudarsana
+<img width="542" alt="image" src="https://github.com/user-attachments/assets/3122219e-f90b-4e7c-a17c-52c96fc62c88">
+
+-lalu buat direktori /etc/bind/jarkom. lalu copy file template file konfigurasi yang berasal dari cp /etc/bind/db.local
+<img width="524" alt="image" src="https://github.com/user-attachments/assets/1f22cd59-d87c-4d69-910c-6fc65493d634">
+
+- nano /etc/bind/jarkom/sudarsana.it29.com untuk mengubah konfigurasi sesuai soal
+<img width="554" alt="image" src="https://github.com/user-attachments/assets/926dd51f-beb7-4278-85b7-fe2b08a85e38">
+
+- lalu ping sudarsana.it29.com
+![WhatsApp Image 2024-10-01 at 19 29 00](https://github.com/user-attachments/assets/57a31ccb-18cd-4251-92ae-c141a3644ba0)
+
 
 
 ### soal 3
 
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu pasopati.xxxx.com dengan alias www.pasopati.xxxx.com yang mengarah ke Kotalingga.
 
+- karena sudah mengkonfigurasi zone pada nomor satu, kita langsung meng-copy file yang berasal dari cp /etc/bind/db.local
+<img width="538" alt="image" src="https://github.com/user-attachments/assets/505591be-adac-4694-93be-f8d4dc1907ef">
+
+- nano /etc/bind/jarkom/pasopati.it29.com untuk mengubah konfigurasi sesuai soal
+<img width="531" alt="image" src="https://github.com/user-attachments/assets/60f773ff-3fd8-47ca-a0f8-a818458a1379">
+
+- lalu ping pasopati.it29.com
+![WhatsApp Image 2024-10-01 at 20 35 04](https://github.com/user-attachments/assets/59f9388e-8945-49bb-a752-45535ec4ba21)
+
+
+
 
 ### soal 4
 
 Markas pusat meminta dibuatnya domain khusus untuk menaruh informasi persenjataan dan suplai yang tersebar. Informasi dan suplai meme terbaru tersebut mengarah ke Tanjungkulai dan domain yang ingin digunakan adalah rujapala.xxxx.com dengan alias www.rujapala.xxxx.com.
 
+- karena sudah mengkonfigurasi zone pada nomor satu, kita langsung meng-copy file yang berasal dari cp /etc/bind/db.local
+<img width="538" alt="image" src="https://github.com/user-attachments/assets/2c119851-a9a0-44c2-9fb7-8af939e522e5">
+
+- nano /etc/bind/jarkom/rujapala.it29.com untuk mengubah konfigurasi sesuai soal
+<img width="538" alt="image" src="https://github.com/user-attachments/assets/05acb76d-0e6c-4af4-8366-35d96240e9ca">
+
+- lalu ping rujapala.it29.com
+![WhatsApp Image 2024-10-01 at 21 28 45](https://github.com/user-attachments/assets/09e2f75c-a463-4f80-98d9-9cd53e862db8)
+
+
 
 ### soal 5
 
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
+
 
 
 ### soal 6
