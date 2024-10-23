@@ -3,8 +3,8 @@
 ### Anggota Kelompok
 | Nama | NRP |
 |---------|---------|
-| Harwinda | 5027221079   |
-| Muhammad Syahmi Ash Shidqi | 5027211085   |
+| Harwinda | 5027231079   |
+| Muhammad Syahmi Ash Shidqi | 5027231085   |
 
 #Laporan Resmi
 
